@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Home Decoration</title>
+    <link href="./assets/img/fav/favicon.png" rel="icon" type="image/png" sizes="16x16">
+
+    <!-- Fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <!-- Jquery UI CSS -->
+    <link rel="stylesheet" href="./assets/libs/jquery-ui-1.13.1/jquery-ui.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+
+    <!-- Custom Style -->
+    <style>
+         :root {
+            --primary-color: hsl(330, 87%, 17%);
+            --secondary-color: hsla(203, 100%, 13%, 1);
+        }
+        
+        body {
+            font-family: "Source Sans Pro", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            height: 100vh;
+            background: linear-gradient(20deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('./assets/img/banner/banner2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        /* start navbar */
+        
+        .navbar {
+            background: linear-gradient(rgba(0, 0, 0, 0.2), var(--secondary-color));
+            padding: 10px 30px;
+            transition: all 0.5s;
+        }
+        
+        .navmenusscroll {
+            background: linear-gradient(rgba(0, 0, 0, 0.2), var(--secondary-color));
+            padding: 0 30px;
+        }
+        
+        .menuitems {
+            color: white;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        
+        .menuitems:hover {
+            color: rgb(73, 173, 236);
+        }
+        
+        .lines1,
+        .lines2,
+        .lines3 {
+            width: 25px;
+            height: 3px;
+            margin: 6px;
+            transition: all 0.6s;
+        }
+        
+        .corssxs .lines1 {
+            transform: rotate(45deg) translate(7px, 5px);
+        }
+        
+        .corssxs .lines2 {
+            opacity: 0;
+        }
+        
+        .corssxs .lines3 {
+            transform: rotate(-45deg) translate(6px, -7px);
+        }
+        /* end navbar */
+        /* start banner */
+        
+        .banners {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .bannerheaders {
+            animation-name: banni;
+            animation-duration: 2s;
+        }
+        
+        .bannerparagraphs {
+            animation-name: banni;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-fill-mode: backwards;
+        }
+        
+        @keyframes banni {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        /* end banner */
+        /* start aboutus */
+        
+        .aboutuss {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./assets/img/banner/banner2.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .aboutuss img {
+            width: 300px;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .aboutuss .lines {
+            width: 30%;
+            height: 2px;
+            margin-top: 5px;
+            background-color: white;
+        }
+        
+        .aboutuss .lines:nth-of-type(2) {
+            width: 20%;
+        }
+        
+        .aboutuss .lines:nth-of-type(3) {
+            width: 10%;
+        }
+        
+        .somethings h6 {
+            border-left: 5px solid red;
+            background-color: white;
+            color: #000;
+        }
+        
+        .somethings .heading {
+            margin: 25px 0;
+            padding: 10px 0;
+        }
+        
+        .somethings .heading~.paragraphs {
+            text-align: left;
+        }
+        /* end aboutus */
+        /* Start Properties */
+        
+        .properties .titles {
+            color: var(--secondary-color);
+            padding: 10px 15px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .properties .titles::before,
+        .properties .titles::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            position: absolute;
+        }
+        
+        .properties .titles::before {
+            border-left: 3px solid var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            left: 0;
+            bottom: 0;
+        }
+        
+        .properties .titles::after {
+            border-right: 3px solid var(--primary-color);
+            border-top: 3px solid var(--primary-color);
+            top: 0;
+            right: 0;
+        }
+        
+        .properties .propertylists {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .properties .activeitems {
+            color: var(--primary-color);
+        }
+        /* End Properties */
+    </style>
+</head>
+
+<body>
+
+    <!-- Start Header Section -->
+    <header>
+
+        <!-- Start Nav bar -->
+
+        <nav class="navbar navbar-expand-lg fixed-top">
+
+            <a href="#" class="navbar-brand text-light ">
+
+                <img src="./assets/img/fav/favicon.png" width="100px" alt="favicon">
+                <span class="text-uppercase fw-bold h2 mx-2">plannco</span>
+                <span class="text-capitalize h3">home decoration</span>
+
+            </a>
+
+            <button class="navbar-toggler navbuttons" data-bs-toggle="collapse" data-bs-target="#nav">
+                <div class="bg-light lines1"></div>
+                <div class="bg-light lines2"></div>
+                <div class="bg-light lines3"></div>
+            </button>
+
+
+            <div id="nav" class="navbar-collapse justify-content-end text-uppercase fw-bold">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item"><a href="#" class="nav-link menuitems">Home</a></li>
+
+                    <li class="nav-item"><a href="#" class="nav-link menuitems">About Us</a></li>
+
+                    <li class="nav-item"><a href="#" class="nav-link menuitems">Services</a></li>
+
+                    <li class="nav-item"><a href="#" class="nav-link menuitems">Properties</a></li>
+
+                    <li class="nav-item"><a href="#" class="nav-link menuitems">Customers</a></li>
+
+                    <li class="nav-item"><a href="#" class="nav-link menuitems">Furnitures</a></li>
+
+                    <li class="nav-item"><a href="#" class="nav-link menuitems">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- End Nav Bar -->
+
+        <!-- Start Banner -->
+        <section class="text-light text-center text-md-end banners">
+            <h1 class="display-6 bannerheaders">
+                Welcome to
+                <span class="text-uppercase">plannco </span>
+                <span class="text-capatalize"> home dcoration Co,.Ltd
+                </span>
+            </h1>
+            <p class="lead bannerparagraphs">Lorem ipsum dolor sit amet consectetur adipisicing elit some textnisi similique quisquam odit .</p>
+        </section>
+        <!-- End Banner -->
+    </header>
+    <!-- End Header Section -->
+
+
+
+    <!-- Start About Us Section -->
+    <section id="about" class="py-5 aboutuss">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <img src="./assets/img/users/staffgirl1.png" alt="salegirlstaff1">
+                </div>
+
+                <div class="col-sm-6">
+
+                    <div class="row text-center text-white">
+
+                        <div class="col-12">
+                            <h3 class="text-uppercase">who we are !!!</h3>
+
+                            <div class="lines"></div>
+
+                            <div class="lines"></div>
+
+                            <div class="lines"></div>
+                        </div>
+
+                        <div class="col-sm-12 somethings">
+                            <h6 class="fst-italic heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci lorem. </h6>
+
+                            <p class="paragraphs">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas debitis alias recusandae mollitia quidem accusamus quo minima ut fugit exercitationem qui, iure perspiciatis enim necessitatibus rem aliquid eos autem quisquam.
+
+                            </p>
+
+                            <button class="btn btn-danger rounded-0 mt-3">Read More..</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End About Us Section -->
+
+    <!-- Start Properties Section -->
+
+    <section id="property" class="py-5 properties">
+
+        <div class="container-fluid">
+
+            <div class="row text-center">
+
+                <!--start title  -->
+                <div class="col-12">
+                    <h5 class="titles text-uppercase">
+                        properties
+                    </h5>
+                </div>
+                <!-- end title -->
+
+                <ul class="list-inline text-center text-uppercase fw-bold text-secondary">
+                    <li class="list-inline-item propertylists activeitems" data-filter="all">All <span class="mx-md-3">/</span></li>
+
+                    <li class="list-inline-item propertylists" data-filter="houses">House <span class="mx-md-3">/</span></li>
+
+                    <li class="list-inline-item propertylists" data-filter="decorations">Decoration <span class="mx-md-3">/</span></li>
+
+                    <li class="list-inline-item propertylists" data-filter="furnitures">Furniture <span class="mx-md-3">/</span ></li>
+
+                    <li class="list-inline-item propertylists" data-filter="offices">Office </li>
+                </ul>
+
+
+                <div class="container-fluid">
+
+                    <div class="d-flex flex-wrap justify-content-center">
+
+                        <div class="filters houses">
+                            <a href="./assets/img/gallery/image1.jpg">
+                                <img src="./assets/img/gallery/image1.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters houses">
+                            <a href="./assets/img/gallery/image2.jpg">
+                                <img src="./assets/img/gallery/image2.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters houses">
+                            <a href="./assets/img/gallery/image3.jpg">
+                                <img src="./assets/img/gallery/image3.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters decorations">
+                            <a href="./assets/img/gallery/image4.jpg">
+                                <img src="./assets/img/gallery/image4.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters decorations">
+                            <a href="./assets/img/gallery/image5.jpg">
+                                <img src="./assets/img/gallery/image5.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters decorations">
+                            <a href="./assets/img/gallery/image6.jpg">
+                                <img src="./assets/img/gallery/image6.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters furnitures">
+                            <a href="./assets/img/gallery/image7.jpg">
+                                <img src="./assets/img/gallery/image7.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters furnitures">
+                            <a href="./assets/img/gallery/image8.jpg">
+                                <img src="./assets/img/gallery/image8.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters furnitures">
+                            <a href="./assets/img/gallery/image9.jpg">
+                                <img src="./assets/img/gallery/image9.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters offices">
+                            <a href="./assets/img/gallery/image1.jpg">
+                                <img src="./assets/img/gallery/image1.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters offices">
+                            <a href="./assets/img/gallery/image2.jpg">
+                                <img src="./assets/img/gallery/image2.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters offices">
+                            <a href="./assets/img/gallery/image3.jpg">
+                                <img src="./assets/img/gallery/image3.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters offices">
+                            <a href="./assets/img/gallery/image4.jpg">
+                                <img src="./assets/img/gallery/image4.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters houses">
+                            <a href="./assets/img/gallery/image5.jpg">
+                                <img src="./assets/img/gallery/image5.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters houses">
+                            <a href="./assets/img/gallery/image6.jpg">
+                                <img src="./assets/img/gallery/image6.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters decorations">
+                            <a href="./assets/img/gallery/image7.jpg">
+                                <img src="./assets/img/gallery/image7.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters furnitures">
+                            <a href="./assets/img/gallery/image8.jpg">
+                                <img src="./assets/img/gallery/image8.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+                        <div class="filters offices">
+                            <a href="./assets/img/gallery/image9.jpg">
+                                <img src="./assets/img/gallery/image9.jpg" alt="" width="250px">
+                            </a>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- End Properties Section -->
+
+    <!-- Start Contact Section -->
+    <section>
+        <div>
+             <h2>This is heading two</h2>
+
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <section>
+        <div>
+            <h1>this is heading one</h1>
+            
+        </div>
+    </section>
+
+
+
+
+    <!-- Jquey JS -->
+    <script src="./assets/libs/jquery-3.6.0.min.js"></script>
+
+    <!-- Jquery UI JS -->
+    <script src="./assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="./assets/libs/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.js">
+    </script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            //Start navbar
+
+            //for burger
+            $('.navbuttons').click(function() {
+                $(this).toggleClass('corssxs');
+            });
+
+
+            // For scrolling
+            $(window).scroll(function(){
+                let getscrolltop = $(this).scrollTop();
+                console.log(getscrolltop);
+                if(getscrolltop>=200){
+                    $('.navbar').addClass('navmenusscroll');
+                   
+                }else{
+                    $('.navbar').removeClass('navmenusscroll');
+                }
+               
+            });
+
+
+            //End navbar
+
+            // Start Property
+
+            //For activeitems change
+            $('.propertylists').click(function(){
+
+                //for active items
+                $(this).addClass('activeitems').siblings().removeClass('activeitems');
+
+
+                //for filters the furniture
+
+                let getattribute = $(this).attr('data-filter');
+                
+                if(getattribute == "all"){
+                    $('.filters').show('slide',500);
+                }else{
+
+                    $('.filters').not('.'+getattribute).hide('puff',500);
+
+                    $('.filters').filter('.'+getattribute).show('slide',500);
+
+                }
+
+
+            });
+
+         
+
+
+            // End Property
+        })
+    </script>
+
+</body>
